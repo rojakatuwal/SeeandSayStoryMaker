@@ -17,14 +17,12 @@ body {
     align-items: center;
     padding: 20px;
     color: #333;
-    border:#00b383 4PX solid;
-    width: fit-content;
-    margin-left: 35%;
-    margin-top: 5%;
-    margin-bottom: 10%;
-    border-radius: 5PX;
+    border: #00b383 4px solid;
+    width: 90%;
+    max-width: 600px;
+    margin: 5% auto;
+    border-radius: 5px;
     animation: ease-in 30ms;
-
 }
 
 /* Style for each div element */
@@ -35,20 +33,20 @@ div {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     width: 100%;
-    max-width: 600px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 /* Style for all textarea elements */
-#textarea {
+textarea {
     width: 100%;
-    height: 40px;
+    height: 100px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    margin-left: 10px;
+    margin-top: 10px;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -79,24 +77,42 @@ textarea#storyarea {
     height: 150px; /* Increased height for larger text area */
 }
 
-/* Specific style for the 'Read story aloud' button */
-button#speakstory {
-    margin-left: 100px;
-}
-
-/* Specific style for the 'Stop Reading' button */
+/* Specific style for the 'Read story aloud' and 'Stop Reading' buttons */
+button#speakstory,
 button#stopspeaking {
-    margin-left: 100px;
+    margin-top: 10px;
 }
-/* Keyframes for the fadeIn animation */
 
+/* Keyframes for the fadeIn animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
 /* Applying the fadeIn animation to the text areas */
-#Text-area, #area, #area1, #area2, #area3, #area4, #area5, #storyarea {
+#area, #area1, #area2, #area3, #area4, #area5, #storyarea {
     font-size: 24px;
     animation: fadeIn 2s ease-in-out;
+}
+
+/* Responsive styles */
+@media (min-width: 600px) {
+    body {
+        padding: 40px;
+    }
+
+    div {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    button {
+        width: auto;
+        max-width: 200px;
+        margin-right: 10px;
+    }
+
+    textarea {
+        width: calc(100% - 220px);
+    }
 }
